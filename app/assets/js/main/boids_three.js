@@ -7,7 +7,7 @@
 **/
 var viz_container_id = "boids_container"; 
 var viz_canvas_id = "three_boid_canvas"; 
-
+console.log("point1")
 // ------------------------------------------------------------------------------------------------
 // renderer, camera, scene 
 
@@ -25,7 +25,7 @@ renderer.setSize(SCENE_WIDTH, SCENE_HEIGHT);
 // set up a camera and move it to a good viewing place (orbitcontrols overwrites this)
 var camera = new THREE.PerspectiveCamera(45, SCENE_WIDTH / SCENE_HEIGHT, 1, 10000);
 camera.position.set(SCENE_WIDTH, SCENE_HEIGHT / 2, 2000);
-
+console.log("point2")
 // scene - where we put our meshes
 var scene = new THREE.Scene();
 
@@ -46,7 +46,7 @@ controls.addEventListener('change', function(){
 var axes = new THREE.AxisHelper2(SCENE_WIDTH);
 axes.update();
 container.add(axes.mesh);
-
+console.log("point3")
 // bounding box
 var bounding_box = new THREE.BoundingBoxHelper(container); // can also be tied to scene but since our objects are in the container we tie it here
 bounding_box.update(); // render
@@ -67,7 +67,7 @@ var directional_light = new THREE.DirectionalLight(0xffffff)
 directional_light.position.set(2,2,2);
 directional_light.name = "directional_light";
 scene.add(directional_light);
-
+console.log("point 4")
 // ------------------------------------------------------------------------------------------------
 // user interface
 
