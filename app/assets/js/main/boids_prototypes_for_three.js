@@ -28,7 +28,7 @@ Boid.prototype.create_geometry = function() {
         * see http://threejs.org/docs/#Reference/Extras.Geometries/BoxGeometry
     **/
 
-    this.geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    this.geometry = new THREE.BoxGeometry( 21, 21, 21 );
     
     if(typeof(this.geometry) == "undefined") console.log("Action Required: You need to set a boid geometry.") // delete this line
 }
