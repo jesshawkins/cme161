@@ -84,10 +84,10 @@ var controls_state = {
     "ambient_light_intensity": 1,
     "directional_light_intensity": 1,
     "show_axis": true,
-    "show_bounding_box": true
-    "coeff_alignment": 0.75,
-    "coeff_cohesion": 0.5,
-    "coeff_separation":0.3
+    "show_bounding_box": true,
+    "coeff_alignment": 1,
+    "coeff_cohesion": 1,
+    "coeff_separation": 1
 };
 
 gui.add(controls_state, 'ambient_light')
@@ -125,27 +125,24 @@ gui.add(controls_state, 'show_bounding_box')
 gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
-        var b = boid[i];
+        var b = boid[i]
         b.coeff_alignment = value;
-        boid[i] = b;
         }
     });
 
 gui.add(controls_state, 'coeff_cohesion', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
-        var b = boid[i];
+        var b = boid[i]
         b.coeff_cohesion = value;
-        boid[i] = b;
         }
     });
 
 gui.add(controls_state, 'coeff_separation', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
-        var b = boid[i];
+        var b = boid[i]
         b.coeff_separation = value;
-        boid[i] = b;
         }
     });
 /**
