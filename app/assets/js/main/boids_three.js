@@ -85,6 +85,7 @@ var controls_state = {
     "directional_light_intensity": 1,
     "show_axis": true,
     "show_bounding_box": true,
+    "test": 1,
     "coeff_alignment": 1,
     "coeff_cohesion": 1,
     "coeff_separation": 1
@@ -120,6 +121,11 @@ gui.add(controls_state, 'show_bounding_box')
     .onChange(function(on) {
         if (on) { container.add(bounding_box);    } 
         else    { container.remove(bounding_box); }
+    });
+
+gui.add(controls_state, 'test', 0, 1)
+    .onChange(function(value) {
+        scene.getObjectByName('ambient_light').intensity = value;
     });
 
 gui.add(controls_state, 'coeff_alignment', 0, 1)
@@ -159,7 +165,7 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
     * hint: look at the loop in the animate() function, run a similar loop when the slider is changed
     * hint: do this requirement last
 **/
-//if(gui.__controllers.length == 6) console.log("Action Required: add required dat.gui sliders"); // delete this line
+if(gui.__controllers.length == 6) console.log("Action Required: add required dat.gui sliders"); // delete this line
 
 // --------------------------------------------------------- 
 // add boids
