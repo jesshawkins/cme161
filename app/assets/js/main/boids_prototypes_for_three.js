@@ -59,7 +59,6 @@ Boid.prototype.create_material = function() {
                 "wireframe": true,
                 "wireframeLinewidth": 0.9,
                 "transparent": true,
-                "opacity": 0.5
             });
 
     if(typeof(this.material) == "undefined") console.log("Action Required: You need to set a boid material.") // delete this line
