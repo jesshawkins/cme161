@@ -63,10 +63,6 @@ var ambient_light = new THREE.AmbientLight(0xffffff);
 ambient_light.name = "ambient_light";
 scene.add(ambient_light);
 
-var ambient_light2 = new THREE.AmbientLight(0xffffff);
-ambient_light.name = "ambient_light2";
-scene.add(ambient_light);
-
 var directional_light = new THREE.DirectionalLight(0xffffff)
 directional_light.position.set(2,2,2);
 directional_light.name = "directional_light";
@@ -89,13 +85,12 @@ var controls_state = {
     "directional_light_intensity": 1,
     "show_axis": true,
     "show_bounding_box": true,
-    "ambient_light_intensity2": 1,
     "coeff_alignment": 1,
     "coeff_cohesion": 1,
     "coeff_separation": 1
 };
 
-gui.add(controls_state, 'ambient_light')
+/**gui.add(controls_state, 'ambient_light')
     .onChange(function(on) {
         scene.getObjectByName('ambient_light').intensity = 1 * on;
     });
@@ -126,12 +121,7 @@ gui.add(controls_state, 'show_bounding_box')
         if (on) { container.add(bounding_box);    } 
         else    { container.remove(bounding_box); }
     });
-
-gui.add(controls_state, 'ambient_light_intensity2', 0, 1)
-    .onChange(function(value) {
-        scene.getObjectByName('ambient_light2').intensity = value;
-    });
-
+**/
 /**gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
