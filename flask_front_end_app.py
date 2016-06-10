@@ -33,13 +33,13 @@ def get_trellis_limit(n_entries):
 		return json.dumps(json.load(data_file)[:n_entries])
 
 @app.route('/health', methods=['GET'])
-def get_trellis():
+def get_health():
 	# This method should return the entire data
 	with open('app/assets/data/health.json') as data_file:
 		return json.dumps(json.load(data_file))
 
 @app.route('/health/limit/<int:n_entries>', methods=['GET'])
-def get_trellis_limit(n_entries):
+def get_health_limit(n_entries):
 	# This method should return only the first 'n_entries' entries
 	with open('app/assets/data/health.json') as data_file:
 		return json.dumps(json.load(data_file)[:n_entries])
