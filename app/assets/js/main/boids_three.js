@@ -159,7 +159,7 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
     * hint: look at the loop in the animate() function, run a similar loop when the slider is changed
     * hint: do this requirement last
 **/
-if(gui.__controllers.length == 6) console.log("Action Required: add required dat.gui sliders"); // delete this line
+//if(gui.__controllers.length == 6) console.log("Action Required: add required dat.gui sliders"); // delete this line
 
 // --------------------------------------------------------- 
 // add boids
@@ -184,7 +184,7 @@ for (var i = 0; i < n; i++) {
             * container.add(b.mesh);
             * boids.push(b);
     **/
-    if(i == 1) console.log("Action Required: initialize boid objects"); // delete this line
+   // if(i == 1) console.log("Action Required: initialize boid objects"); // delete this line
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -215,7 +215,7 @@ function animate() {
                 * b = boids[i];
             * when you're done, delete the update_boids_warning var above
         **/
-        if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
+        //if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
     }
 
     // render scene
