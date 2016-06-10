@@ -45,7 +45,7 @@ controls.addEventListener('change', function(){
 // axes
 var axes = new THREE.AxisHelper2(SCENE_WIDTH);
 axes.update();
-container.add(axes.mesh);
+//container.add(axes.mesh);
 
 // bounding box
 var bounding_box = new THREE.BoundingBoxHelper(container); // can also be tied to scene but since our objects are in the container we tie it here
@@ -78,7 +78,7 @@ document.getElementById(viz_container_id).appendChild( gui.domElement );
 // this is an object that stores the state of the controls
 // when you click on the controls, it changes the values therein
 // you can reference this later in the program, for example while rendering
-var controls_state = {
+/**var controls_state = {
     "ambient_light": true,
     "directional_light": true,
     "ambient_light_intensity": 1,
@@ -89,7 +89,7 @@ var controls_state = {
     "coeff_cohesion": 1,
     "coeff_separation": 1
 };
-
+**/
 /**gui.add(controls_state, 'ambient_light')
     .onChange(function(on) {
         scene.getObjectByName('ambient_light').intensity = 1 * on;
