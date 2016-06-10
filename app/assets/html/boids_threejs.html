@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Boids Algorithm in Three.js</title>
@@ -9,7 +9,7 @@
 
 	<!-- Container for Visualization -->
 		<div id="boids_container">
-			
+			<canvas id="three_boid_canvas"></canvas>
 		</div>
 	<!-- End Container -->
 
@@ -31,7 +31,7 @@
 		<!-- Physics (boids) -->
 		<script src="assets/js/libs/maths/vector3.js"></script>
 		<script src="assets/js/libs/physics/boids.js"></script>
-	
+
 	<!-- End General JS Libraries -->
 
 
@@ -39,7 +39,7 @@
 
 		<!-- Modifications to the physics object (boids) to work with the renderer (three) -->
 		<script src="assets/js/main/boids_prototypes_for_three.js"></script>
-		
+
 		<!-- Main program that joins renderer (three) to physics (boid) -->
 		<script src="assets/js/main/boids_three.js"></script>
 
