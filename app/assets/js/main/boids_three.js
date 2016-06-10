@@ -78,7 +78,7 @@ document.getElementById(viz_container_id).appendChild( gui.domElement );
 // this is an object that stores the state of the controls
 // when you click on the controls, it changes the values therein
 // you can reference this later in the program, for example while rendering
-/**var controls_state = {
+var controls_state = {
     "ambient_light": true,
     "directional_light": true,
     "ambient_light_intensity": 1,
@@ -89,8 +89,8 @@ document.getElementById(viz_container_id).appendChild( gui.domElement );
     "coeff_cohesion": 1,
     "coeff_separation": 1
 };
-**/
-/**gui.add(controls_state, 'ambient_light')
+
+gui.add(controls_state, 'ambient_light')
     .onChange(function(on) {
         scene.getObjectByName('ambient_light').intensity = 1 * on;
     });
@@ -121,8 +121,8 @@ gui.add(controls_state, 'show_bounding_box')
         if (on) { container.add(bounding_box);    } 
         else    { container.remove(bounding_box); }
     });
-**/
-/**gui.add(controls_state, 'coeff_alignment', 0, 1)
+
+gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
         var b = boids[i];
@@ -145,7 +145,7 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
         b.coeff_separation = value;
         }
     });
-    **/
+    
     /**
     * Actions Required:
     *  add sliders for the following Boid properties: coeff_alignment, coeff_cohesion, and coeff_separation
