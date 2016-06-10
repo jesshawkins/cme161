@@ -64,7 +64,7 @@ ambient_light.name = "ambient_light";
 scene.add(ambient_light);
 
 var directional_light = new THREE.DirectionalLight(0xffffff)
-directional_light.position.set(1,1,1);
+directional_light.position.set(2,2,2);
 directional_light.name = "directional_light";
 scene.add(directional_light);
 
@@ -125,7 +125,7 @@ gui.add(controls_state, 'show_bounding_box')
 gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
-        var b = boid[i]
+        var b = boid[i];
         b.coeff_alignment = value;
         }
     });
@@ -133,7 +133,7 @@ gui.add(controls_state, 'coeff_alignment', 0, 1)
 gui.add(controls_state, 'coeff_cohesion', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
-        var b = boid[i]
+        var b = boid[i];
         b.coeff_cohesion = value;
         }
     });
@@ -141,7 +141,7 @@ gui.add(controls_state, 'coeff_cohesion', 0, 1)
 gui.add(controls_state, 'coeff_separation', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
-        var b = boid[i]
+        var b = boid[i];
         b.coeff_separation = value;
         }
     });
