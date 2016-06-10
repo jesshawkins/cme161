@@ -182,6 +182,7 @@ for (var i = 0; i < n; i++) {
 // ------------------------------------------------------------------------------------------------
 // animation loop
 
+var update_boids_warning = true;
 function animate() {
     // start stats recording
     stats.begin();
@@ -193,7 +194,7 @@ function animate() {
       b.update_mesh();
 
 
-      // if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
+    if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
         /**
             * Actions Required:
             *  update the position of each boid b
