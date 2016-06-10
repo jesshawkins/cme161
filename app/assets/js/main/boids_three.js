@@ -94,48 +94,49 @@ gui.add(controls_state, 'ambient_light')
     .onChange(function(on) {
         scene.getObjectByName('ambient_light').intensity = 1 * on;
         
-    }console.log("1"));
+    });
+    console.log(gui.__controllers.length)
 
 gui.add(controls_state, 'directional_light')
-    .onChange(function(on) {
+    .onChanggui.__controllers.lengthe(function(on) {
         scene.getObjectByName('directional_light').intensity = 1 * on;
         
-    }console.log("2"));
+    });
 
 gui.add(controls_state, 'ambient_light_intensity', 0, 1)
     .onChange(function(value) {
         scene.getObjectByName('ambient_light').intensity = value;
         
-    }console.log("3"));
+    });
 
 gui.add(controls_state, 'directional_light_intensity', 0, 1)
     .onChange(function(value) {
         scene.getObjectByName('directional_light').intensity = value;
         
-    }console.log("4"));
-
+    });
+console.log(gui.__controllers.length)
 gui.add(controls_state, 'show_axis')
     .onChange(function(on) {
         if (on) { container.add(axes.mesh);    } 
         else    { container.remove(axes.mesh); }
         
-    }console.log("5"));
+    });
 
 gui.add(controls_state, 'show_bounding_box')
     .onChange(function(on) {
         if (on) { container.add(bounding_box);    } 
         else    { container.remove(bounding_box); }
 
-    } console.log("6")
+    }
     );
-
+console.log(gui.__controllers.length)
 gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
         var b = boids[i];
         b.coeff_alignment = value;
         }
-    }console.log("7"));
+    });
 
 gui.add(controls_state, 'coeff_cohesion', 0, 1)
     .onChange(function(value) {
@@ -143,7 +144,7 @@ gui.add(controls_state, 'coeff_cohesion', 0, 1)
         var b = boids[i];
         b.coeff_cohesion = value;
         }
-    }console.log("8"));
+    });
 
 gui.add(controls_state, 'coeff_separation', 0, 1)
     .onChange(function(value) {
@@ -151,7 +152,7 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
         var b = boids[i];
         b.coeff_separation = value;
         }
-    }console.log("9"));
+    });
     
     /**
     * Actions Required:
