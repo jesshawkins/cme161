@@ -35,7 +35,7 @@
 
 					<!-- begin header -->
 					<div class=".col-xs-12 .col-md-8">
-						<h1>Visualization Portfolio of {Your Name Here}</h1>
+						<h1>Visualization Portfolio of Jess Hawkins & Michelle Han</h1>
 						<h4><a href='http://web.stanford.edu/~dderiso/cme151/' target='_blank'>CME 161: Data Visualization</a> <small>Spring 2016</small></h4>
 						<hr>
 					</div>
@@ -44,31 +44,100 @@
 					<!-- begin viz 1 -->
 					<div class=".col-xs-12 .col-md-8">
 						<h3>
-							Random Triangle Meshes
+							An Analysis of Crime in San Francisco
 						</h3>
 
 						<p>
-							This visualization is of random points being generated and plotted. At each time step, a random combination of the point's last value and a another random number is computed and plotted. The visualization therefore waxes and wanes randomly. Thin sections indicate that the value at the last timestep had a greater weight in the random combination, while thick sections indicate that randomness played a greater role. The library used is <a href="https://github.com/processing-js/processing-js/" target="_blank">processing.js</a>. (This example was made by Dave Deriso.)
+							This visualization is our analysis of crime in various SF neighborhoods. The library used can be found at <a href="https://data.sfgov.org/Public-Safety/Map-Crime-Incidents-from-1-Jan-2003/gxxq-x39z" target="_blank">SF open data </a> as well as at <a href="https://www.kaggle.com/c/sf-crime" target="_blank">this Kaggle competition </a>
 						</p>
-
-						<hr>
-
-						<canvas id="processing_random_triangle_meshes"></canvas>
+						<div class="container-fluid" style="margin-top:10px;">
+						  <div class="row">
+						    <div class="col-md-8">
+						      <div id="crime_slides"></div>
+						    </div>
+						    <div class="col-md-4 well pull-right">
+						      <h2>Crime in San Francisco</h2>
+						      <hr>
+						      <p id="message"></p>
+						      <button id="start_btn" class="btn btn-primary pull-right">Start</button>
+						    </div>
+						  </div>
+					</div>
 						
 						<hr>
 
 					</div>
 					<!-- end viz 1 -->
-				
 
 					<!-- begin viz 2 -->
 					<div class=".col-xs-12 .col-md-8">
 						<h3>
-							Distribution of Wealth Inequality in Developing Nations
+							Baked Goods Price Hierarchy
 						</h3>
 
 						<p>
-							This visualization shows... The library used is <a href="..." target="_blank">...</a>.
+							This visualization is a tree of various desserts and their prices.
+						</p>
+							<div id="hierarchy"></div>
+						
+						<hr>
+
+					</div>
+					<!-- end viz 2 -->
+
+					<!-- begin viz 3 -->
+					<div class=".col-xs-12 .col-md-8">
+						<h3>
+							Baseball Stats Visualization
+						</h3>
+
+						<p>
+							This visualization shows various baseball statistics for the All Star game. The library used can be found <a href="http://tranquil-peak-82564.herokuapp.com/api/v1.0/data/baseball/" target="_blank">here</a>.
+						</p>
+
+						<hr>
+						<div id="baseball_container"> 
+							<div class="well">
+							  Filter # of Games Played: <b>10</b>
+							  <input id="n_games_slider" type="text" /> <b>100</b>
+								<br> # of Games Played Range: <span id="n_games_slider_txt"></span>
+							</div>
+
+							<div class="well">
+							  Filter Years: <b>1871</b>
+							  <input id="years_slider" type="text" /> <b>2015</b>
+							  <br> Years Range: <span id="years_slider_txt"></span>
+							</div>
+
+							<div class="well">
+							  Filter # of Teams: <b>5 </b>
+							  <input id="team_slider" type="text" /> <b>50</b>
+							  <br> Number of Teams: <span id="team_slider_txt"></span>
+							</div>
+
+							<div class="well">
+							  Filter Max # of Players: <b>1</b>
+							  <input id="player_slider" type="text" /> <b>50</b>
+							  <br> Max Number of Players: <span id="player_slider_txt"></span>
+							</div>
+
+							<hr>	
+						</div>
+						
+						<hr>
+
+					</div>
+					<!-- end viz 3 -->
+				
+
+					<!-- begin viz 4 -->
+					<div class=".col-xs-12 .col-md-8">
+						<h3>
+							Iris Dataset Visualization
+						</h3>
+
+						<p>
+							This visualization shows flower features. The library used can be found <a href="http://tranquil-peak-82564.herokuapp.com/api/v1.0/data/iris/" target="_blank">here</a>.
 						</p>
 
 						<hr>
@@ -121,7 +190,7 @@
 						<hr>
 
 					</div>
-					<!-- end viz 2 -->
+					<!-- end viz 4 -->
 
 				</div>
 				<!-- end row -->
@@ -164,8 +233,8 @@
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/dc/1.7.1/dc.js'></script>
 
 	<!-- js scripts -->
-	<script src='assets/js/c3js_crime.js'></script>
-	<script src='assets/js/d3js_cake.js'></script>
+	<script src='assets/js/crime.js'></script>
+	<script src='assets/js/dessert.js'></script>
 	<script src='assets/js/dcjs_baseball.js'></script>
 	<script src='assets/js/dcjs_flower.js'></script>
 
