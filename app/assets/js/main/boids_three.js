@@ -60,7 +60,7 @@ document.getElementById(viz_container_id).appendChild(stats.domElement); // add 
 // lights
 
 var ambient_light = new THREE.AmbientLight(0xffffff);
-ambient_light.name = "ambient_lightz";
+ambient_light.name = "ambient_light";
 scene.add(ambient_light);
 
 var directional_light = new THREE.DirectionalLight(0xffffff)
@@ -79,7 +79,7 @@ document.getElementById(viz_container_id).appendChild( gui.domElement );
 // when you click on the controls, it changes the values therein
 // you can reference this later in the program, for example while rendering
 var controls_state = {
-    "ambient_lightz": true,
+    "ambient_light": true,
     "directional_light": true,
     "ambient_light_intensity": 1,
     "directional_light_intensity": 1,
@@ -90,7 +90,7 @@ var controls_state = {
     "coeff_separation": 1
 };
 
-gui.add(controls_state, 'ambient_lightz')
+gui.add(controls_state, 'ambient_light')
     .onChange(function(on) {
         scene.getObjectByName('ambient_light').intensity = 1 * on;
         
