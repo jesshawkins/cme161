@@ -45,7 +45,7 @@ controls.addEventListener('change', function(){
 // axes
 var axes = new THREE.AxisHelper2(SCENE_WIDTH);
 axes.update();
-//container.add(axes.mesh);
+container.add(axes.mesh);
 
 // bounding box
 var bounding_box = new THREE.BoundingBoxHelper(container); // can also be tied to scene but since our objects are in the container we tie it here
@@ -191,13 +191,13 @@ for (var i = 0; i < n; i++) {
             * container.add(b.mesh);
             * boids.push(b);
     **/
-   // if(i == 1) console.log("Action Required: initialize boid objects"); // delete this line
+    if(i == 1) console.log("Action Required: initialize boid objects"); // delete this line
 }
 
 // ------------------------------------------------------------------------------------------------
 // animation loop
 
-//var update_boids_warning = true; // delete this line
+var update_boids_warning = true; // delete this line
 
 function animate() {
     // start stats recording
@@ -222,7 +222,7 @@ function animate() {
                 * b = boids[i];
             * when you're done, delete the update_boids_warning var above
         **/
-        //if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
+        if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
     }
 
     // render scene
