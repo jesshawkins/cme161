@@ -122,7 +122,7 @@ gui.add(controls_state, 'show_bounding_box')
         else    { container.remove(bounding_box); }
     });
 
-/**gui.add(controls_state, 'coeff_alignment', 0, 1)
+gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
         var b = boid[i]
@@ -145,7 +145,7 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
         b.coeff_separation = value;
         }
     });
-    **/
+    
     /**
     * Actions Required:
     *  add sliders for the following Boid properties: coeff_alignment, coeff_cohesion, and coeff_separation
