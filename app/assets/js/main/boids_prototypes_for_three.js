@@ -1,6 +1,6 @@
 // ---------------------------------------------------------
 // Particle (Replaced with Boid) Render Prototype Methods
-
+ 
 Boid.prototype.set_parameters = function() {
     /**
         * Action Required: add a radius and hue parameter such that:
@@ -10,7 +10,7 @@ Boid.prototype.set_parameters = function() {
 
     this.radius = Math.random() * 40;
     
-    if(this.radius == 0) console.log("Action Required: You need to set a boid radius.") // delete this line
+    //if(this.radius == 0) console.log("Action Required: You need to set a boid radius.") // delete this line
 
     /**
         * No Action Required
@@ -21,18 +21,18 @@ Boid.prototype.set_parameters = function() {
     this.min_momentum = 4; 
     this.range_momentum = 0;
 }
-
+ 
 Boid.prototype.create_geometry = function() {
     /** 
         * Action Required: fill this in using a box geometry
         * see http://threejs.org/docs/#Reference/Extras.Geometries/BoxGeometry
     **/
 
-    this.geometry = new THREE.BoxGeometry( 21, 21, 21 );
+    this.geometry = new THREE.BoxGeometry( 15, 15, 15 );
     
-    if(typeof(this.geometry) == "undefined") console.log("Action Required: You need to set a boid geometry.") // delete this line
+    //if(typeof(this.geometry) == "undefined") console.log("Action Required: You need to set a boid geometry.") // delete this line
 }
-
+ 
 Boid.prototype.create_material = function() {
     // assign a random color from HSL space
     this.color = new THREE.Color(); // http://threejs.org/docs/#Reference/Math/Color
@@ -48,20 +48,22 @@ Boid.prototype.create_material = function() {
                 "specular": 0x333333,
                 "shininess": .9,
                 "transparent": true,
-                "opacity": 0.75
+                "opacity": 0.75,
+        "wireframe":true
             }
     **/
 
-    this.material = THREE.MeshPhongMaterial({
+    this.material = new THREE.MeshPhongMaterial({
                 "color": this.color,
                 "specular": 0x333333,
-                "shininess": .33,
+                "shininess": .2,
+                "transparent": true,
+                "opacity": 0.5,
                 "wireframe": true,
-                "wireframeLinewidth": 0.9,
-                "transparent": true
+                "wireframeLinewidth": 3
             });
 
-    if(typeof(this.material) == "undefined") console.log("Action Required: You need to set a boid material.") // delete this line
+   // if(typeof(this.material) == "undefined") console.log("Action Required: You need to set a boid material.") // delete this line
 }
 
 Boid.prototype.create_mesh = function() {
@@ -71,9 +73,9 @@ Boid.prototype.create_mesh = function() {
         * see http://threejs.org/docs/#Reference/Objects/Mesh
     **/
 
-    this.mesh = THREE.Mesh( geometry, material );;
+    this.mesh = new THREE.Mesh( this.geometry, this.material );;
 
-    if(typeof(this.mesh) == "undefined") console.log("Action Required: You need to set a boid mesh.") // delete this line
+   // if(typeof(this.mesh) == "undefined") console.log("Action Required: You need to set a boid mesh.") // delete this line
 
     /**
         * Action Required: set the position of the mesh to the position of the boid in xyz space
@@ -82,7 +84,7 @@ Boid.prototype.create_mesh = function() {
 
     this.mesh.position.set(this.position.x,this.position.y,this.position.z);
 
-    if(typeof(this.mesh) != "undefined" && this.mesh.position.x == 0 && this.mesh.position.y == 0 && this.mesh.position.z == 0) console.log("Action Required: You need to set the mesh position.") // delete this line
+   // if(typeof(this.mesh) != "undefined" && this.mesh.position.x == 0 && this.mesh.position.y == 0 && this.mesh.position.z == 0) console.log("Action Required: You need to set the mesh position.") // delete this line
 }
 
 Boid.prototype.init_mesh_obj = function() {
@@ -105,7 +107,7 @@ Boid.prototype.update_mesh = function() {
     **/
 
     this.mesh.position.set(this.position.x,this.position.y,this.position.z);
-    if(typeof(this.mesh) != "undefined" && this.mesh.position.x == 0 && this.mesh.position.y == 0 && this.mesh.position.z == 0) console.log("Action Required: You need to update the mesh position.") // delete this line
+    //if(typeof(this.mesh) != "undefined" && this.mesh.position.x == 0 && this.mesh.position.y == 0 && this.mesh.position.z == 0) console.log("Action Required: You need to update the mesh position.") // delete this line
 
     /** bonus points:
         * No Action Required
@@ -119,3 +121,4 @@ Boid.prototype.update_mesh = function() {
     if( momentum < this.min_momentum){ this.min_momentum = momentum; this.range_momentum = this.max_momentum - this.min_momentum; }
     this.mesh.material.color.setHSL( .8, momentum/this.range_momentum * 1.1, momentum/this.range_momentum * 0.4);
 }
+    
