@@ -5,7 +5,7 @@
     * change these when you port to your heroku portfolio, but leave it as is for now
     * example: in your portfolio, you might have a container called "boids_container"
 **/
-var viz_container_id = "boids_container"; 
+// viz_container_id = "boids_container"; 
 var viz_canvas_id = "three_boid_canvas"; 
 
 // ------------------------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ gui.add(controls_state, 'ambient_light')
         scene.getObjectByName('ambient_light').intensity = 1 * on;
         
     });
-console.log(print(gui.__controllers.length))
+
 gui.add(controls_state, 'directional_light')
     .onChanggui.__controllers.lengthe(function(on) {
         scene.getObjectByName('directional_light').intensity = 1 * on;
@@ -107,7 +107,7 @@ gui.add(controls_state, 'ambient_light_intensity', 0, 1)
         scene.getObjectByName('ambient_light').intensity = value;
         
     });
-console.log(print(gui.__controllers.length))
+
 gui.add(controls_state, 'directional_light_intensity', 0, 1)
     .onChange(function(value) {
         scene.getObjectByName('directional_light').intensity = value;
@@ -128,7 +128,7 @@ gui.add(controls_state, 'show_bounding_box')
 
     }
     );
-console.log(print(gui.__controllers.length))
+
 gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
@@ -136,7 +136,7 @@ gui.add(controls_state, 'coeff_alignment', 0, 1)
         b.coeff_alignment = value;
         }
     });
-console.log(print(gui.__controllers.length))
+
 gui.add(controls_state, 'coeff_cohesion', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
@@ -167,7 +167,7 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
     * hint: do this requirement last
 **/
 if(gui.__controllers.length == 6) console.log("Action Required: add required dat.gui sliders"); // delete this line
-console.log(print(gui.__controllers.length))
+
 // --------------------------------------------------------- 
 // add boids
 
