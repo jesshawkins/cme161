@@ -5,27 +5,27 @@
     * change these when you port to your heroku portfolio, but leave it as is for now
     * example: in your portfolio, you might have a container called "boids_container"
 **/
-var viz_container_id = "boids_container"; 
-var viz_canvas_id = "three_boid_canvas"; 
-console.log("point1");
+var viz_container_id = "boids_container";
+var viz_canvas_id = "three_boid_canvas";
+
 // ------------------------------------------------------------------------------------------------
-// renderer, camera, scene 
+// renderer, camera, scene
 
 // constants
 var SCENE_WIDTH = SCENE_HEIGHT = 500;
 
 // bind renderer (THREE.WebGLRenderer ==> GPU!) to canvas, set size, and enable antialiasing
 var canvas = document.getElementById(viz_canvas_id);
-var renderer = new THREE.WebGLRenderer({ 
-    "canvas": canvas, 
-    "antialias": true 
+var renderer = new THREE.WebGLRenderer({
+    "canvas": canvas,
+    "antialias": true
 });
 renderer.setSize(SCENE_WIDTH, SCENE_HEIGHT);
 
 // set up a camera and move it to a good viewing place (orbitcontrols overwrites this)
 var camera = new THREE.PerspectiveCamera(45, SCENE_WIDTH / SCENE_HEIGHT, 1, 10000);
 camera.position.set(SCENE_WIDTH, SCENE_HEIGHT / 2, 2000);
-console.log("point2");
+
 // scene - where we put our meshes
 var scene = new THREE.Scene();
 
@@ -46,7 +46,7 @@ controls.addEventListener('change', function(){
 var axes = new THREE.AxisHelper2(SCENE_WIDTH);
 axes.update();
 container.add(axes.mesh);
-console.log("point3");
+
 // bounding box
 var bounding_box = new THREE.BoundingBoxHelper(container); // can also be tied to scene but since our objects are in the container we tie it here
 bounding_box.update(); // render
@@ -64,10 +64,10 @@ ambient_light.name = "ambient_light";
 scene.add(ambient_light);
 
 var directional_light = new THREE.DirectionalLight(0xffffff)
-directional_light.position.set(2,2,2);
+directional_light.position.set(1,1,1);
 directional_light.name = "directional_light";
 scene.add(directional_light);
-console.log("point 4");
+
 // ------------------------------------------------------------------------------------------------
 // user interface
 
@@ -93,67 +93,36 @@ var controls_state = {
 gui.add(controls_state, 'ambient_light')
     .onChange(function(on) {
         scene.getObjectByName('ambient_light').intensity = 1 * on;
-        
     });
 
 gui.add(controls_state, 'directional_light')
-    .onChanggui.__controllers.lengthe(function(on) {
+    .onChange(function(on) {
         scene.getObjectByName('directional_light').intensity = 1 * on;
-        
     });
 
 gui.add(controls_state, 'ambient_light_intensity', 0, 1)
     .onChange(function(value) {
         scene.getObjectByName('ambient_light').intensity = value;
-        
     });
 
 gui.add(controls_state, 'directional_light_intensity', 0, 1)
     .onChange(function(value) {
         scene.getObjectByName('directional_light').intensity = value;
-        
     });
 
 gui.add(controls_state, 'show_axis')
     .onChange(function(on) {
-        if (on) { container.add(axes.mesh);    } 
+        if (on) { container.add(axes.mesh);    }
         else    { container.remove(axes.mesh); }
-        
     });
 
 gui.add(controls_state, 'show_bounding_box')
     .onChange(function(on) {
-        if (on) { container.add(bounding_box);    } 
+        if (on) { container.add(bounding_box);    }
         else    { container.remove(bounding_box); }
-
-    }
-    );
-
-gui.add(controls_state, 'coeff_alignment', 0, 1)
-    .onChange(function(value) {
-        for (var i = 0; i < n; i++) {
-        var b = boids[i];
-        b.coeff_alignment = value;
-        }
     });
 
-gui.add(controls_state, 'coeff_cohesion', 0, 1)
-    .onChange(function(value) {
-       for (var i = 0; i < n; i++) {
-        var b = boids[i];
-        b.coeff_cohesion = value;
-        }
-    });
-
-gui.add(controls_state, 'coeff_separation', 0, 1)
-    .onChange(function(value) {
-       for (var i = 0; i < n; i++) {
-        var b = boids[i];
-        b.coeff_separation = value;
-        }
-    });
-    
-    /**
+/**
     * Actions Required:
     *  add sliders for the following Boid properties: coeff_alignment, coeff_cohesion, and coeff_separation
         see the tutorial for a description of how the boids object works
@@ -166,38 +135,52 @@ gui.add(controls_state, 'coeff_separation', 0, 1)
     * hint: look at the loop in the animate() function, run a similar loop when the slider is changed
     * hint: do this requirement last
 **/
-if(gui.__controllers.length == 6) console.log("Action Required: add required dat.gui sliders"); // delete this line
+gui.add(controls_state, 'coeff_alignment', 0, 1)
+    .onChange(function(value) {
+        for (var i = 0; i < n; i++) {
+          var b = boids[i];
+          b.coeff_alignment = value;
+        }
+    });
 
-// --------------------------------------------------------- 
+gui.add(controls_state, 'coeff_cohesion', 0, 1)
+    .onChange(function(value) {
+        for (var i = 0; i < n; i++) {
+          var b = boids[i];
+          b.coeff_cohesion = value;
+        }
+    });
+
+gui.add(controls_state, 'coeff_separation', 0, 1)
+    .onChange(function(value) {
+        for (var i = 0; i < n; i++) {
+          var b = boids[i];
+          b.coeff_separation = value;
+        }
+    });
+
+// ---------------------------------------------------------
 // add boids
 
 var n = 200,
     boids = [];
 
 for (var i = 0; i < n; i++) {
-            var b = new Boid(SCENE_WIDTH, SCENE_HEIGHT);
-            b.set_parameters();
-            b.init_mesh_obj(); 
-            container.add(b.mesh);
-            boids.push(b);
     /**
         * Actions Required:
-        * build boid objects 
+        * build boid objects
         * use the methods defined in boids_prototypes_for_three.js
         * freebie: copy and paste the lines below in order, and it should work assuming all other required actions are complete
-            * var b = new Boid(SCENE_WIDTH, SCENE_HEIGHT);
-            * b.set_parameters();
-            * b.init_mesh_obj(); 
-            * container.add(b.mesh);
-            * boids.push(b);
     **/
-    if(i == 1) console.log("Action Required: initialize boid objects"); // delete this line
+    var b = new Boid(SCENE_WIDTH, SCENE_HEIGHT);
+    b.set_parameters();
+    b.init_mesh_obj();
+    container.add(b.mesh);
+    boids.push(b);
 }
 
 // ------------------------------------------------------------------------------------------------
 // animation loop
-
-var update_boids_warning = true; // delete this line
 
 function animate() {
     // start stats recording
@@ -205,11 +188,12 @@ function animate() {
 
     // render boids
     for (var i = 0; i < n; i++) {
+      var b = boids[i];
+      b.run(boids);
+      b.update_mesh();
 
-        b = boids[i];
-        b.run(boids);
-        b.update_mesh();
 
+      // if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
         /**
             * Actions Required:
             *  update the position of each boid b
@@ -222,7 +206,6 @@ function animate() {
                 * b = boids[i];
             * when you're done, delete the update_boids_warning var above
         **/
-        if(i == 1 && update_boids_warning){ console.log("Action Required: update boid objects"); update_boids_warning = false; } // delete this line
     }
 
     // render scene
