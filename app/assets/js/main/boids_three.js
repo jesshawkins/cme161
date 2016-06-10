@@ -60,7 +60,7 @@ document.getElementById(viz_container_id).appendChild(stats.domElement); // add 
 // lights
 
 var ambient_light = new THREE.AmbientLight(0xffffff);
-ambient_light.name = "ambient_light";
+ambient_light.name = "ambient_lightz";
 scene.add(ambient_light);
 
 var directional_light = new THREE.DirectionalLight(0xffffff)
