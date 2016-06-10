@@ -64,7 +64,7 @@ ambient_light.name = "ambient_light";
 scene.add(ambient_light);
 
 var ambient_light2 = new THREE.AmbientLight(0xffffff);
-ambient_light.name = "ambient_light";
+ambient_light.name = "ambient_light2";
 scene.add(ambient_light);
 
 var directional_light = new THREE.DirectionalLight(0xffffff)
