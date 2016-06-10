@@ -123,7 +123,7 @@ gui.add(controls_state, 'show_bounding_box')
         else    { container.remove(bounding_box); }
     });
 
-gui.add(controls_state, 'test', 0, 1)
+gui.add(controls_state, 'ambient_light_intensity', 0, 1)
     .onChange(function(value) {
         scene.getObjectByName('ambient_light').intensity = value;
     });
