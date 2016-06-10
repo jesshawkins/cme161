@@ -125,7 +125,7 @@ gui.add(controls_state, 'show_bounding_box')
 gui.add(controls_state, 'coeff_alignment', 0, 1)
     .onChange(function(value) {
         for (var i = 0; i < n; i++) {
-        var b = boid[i];
+        var b = boids[i];
         b.coeff_alignment = value;
         }
     });
@@ -133,7 +133,7 @@ gui.add(controls_state, 'coeff_alignment', 0, 1)
 gui.add(controls_state, 'coeff_cohesion', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
-        var b = boid[i];
+        var b = boids[i];
         b.coeff_cohesion = value;
         }
     });
@@ -141,7 +141,7 @@ gui.add(controls_state, 'coeff_cohesion', 0, 1)
 gui.add(controls_state, 'coeff_separation', 0, 1)
     .onChange(function(value) {
        for (var i = 0; i < n; i++) {
-        var b = boid[i];
+        var b = boids[i];
         b.coeff_separation = value;
         }
     });
