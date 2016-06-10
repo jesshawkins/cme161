@@ -5,7 +5,7 @@
     * change these when you port to your heroku portfolio, but leave it as is for now
     * example: in your portfolio, you might have a container called "boids_container"
 **/
-// viz_container_id = "boids_container"; 
+var viz_container_id = "boids_container"; 
 var viz_canvas_id = "three_boid_canvas"; 
 
 // ------------------------------------------------------------------------------------------------
