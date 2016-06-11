@@ -33,9 +33,9 @@ data is in this format
  
 //json = JSON.parse( "app/assets/data/trellis.json" );
  
-d3.json("https://warm-cliffs-73390.herokuapp.com/health", function(error, remote_json){
+d3.json("http://warm-cliffs-73390.herokuapp.com/health", function(remote_json){
 window.remote_json = remote_json;
- 
+ };
   // crossfilter
   var cf  = crossfilter(remote_json);
   var all = cf.groupAll();
