@@ -194,74 +194,51 @@
 
 <!-- begin viz 5 -->
 					<div class=".col-xs-12 .col-md-8">
-						<h2>
-							Project test
-						</h2>
+						<h3>
+							Practice Final
+						</h3>
 
 						<p>
-							This visualization explores health app data. The library used is
-							<a href="http://gentle-coast-47677.herokuapp.com/health.json" target="_blank">
-								here</a>
+							Practice final stuff here
 						</p>
 
 						<hr>
+						<div id="health_container"> 
+								<div style="float:left;">
+								  <h3>Steps By Day</h3>
+								  <div id="daily_steps"></div>
+								  <hr>
+								</div>
+								<div style="float:left;">
+								  <h3>Distance by Day - Kilometers</h3>
+								  <div id="daily_dist"></div>
+								  <hr>
+								</div>
+								<div style="float:left;">
+								  <h3>Heart Rate By Day</h3>
+								  <div id="daily_hr"></div>
+								</div>
+								<div style="float:left;">
+								  <h3>Active Calories By Weekday</h3>
+								  <div id="weekly_activecal"></div>
+								  <div id="weekly_steps"></div>
+								  <div id="weekly_avg_hr"></div>
+								</div>
+								<div style="float:left;">
+								  <h3>Active Steps By Weekday</h3>
+								  <div id="weekly_steps"></div>
+								</div>
+								<div style="float:left;">
+								  <h3>Active Heart Rate By Weekday</h3>
+								  <div id="weekly_avg_hr"></div>
+								</div>
+								<div style="float:left;">
+								  <h3>Active Calories By Steps Taken</h3>
+								  <div id="hr_activecal"></div>
+								</div>
 
-						<div>
-							<!-- First viz -->
-							<div>
-							<h3>Control Center</h3>
-							<h4>Use the pie chart of number of steps to filter the subject. Use the slider to change the dependent variable. </h4>
-							<div>
-								<div id="project_steps_name" style="float:middle;"/></div>
-								<br><br><br><br><input id="switchYAxis"/><br><br><br><br>
-							</div>
-							<div id="project_resetButton" style="float:right;"></div>
-							<br><hr>
-
-							<div>
-								<h3>Hourly Statistics</h3>
-								<h4>You can also filter the data by hour of day.</h4>
-								<div id="project_hourly_chart" style="float:middle;"></div>
-							</div>
-							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-
-							<div>
-								<h3>Daily Statistics</h3>
-								<div id="project_daily_chart" style="float:middle;"></div>
-							</div>
-
-							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-
-							<div>
-								<h3>Weekly Statistics</h3>
-								<div id="project_weekly_chart" style="float:middle;"></div>
-							</div>
-
-							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-
-						</div>
-
-						<div>
-							<h3>Active Calories by Number of Steps</h3>
-							<h4>This is a composite graphic that captures several variables. You can drag and zoom in the chart to explore.
-							</h4>
-							<p>X Axis = Number of steps
-							<br>Y Axis = Number of active calories
-							<br>Radius = Distance walked (km)
-							<br>Color = Average heart rate</p>
-							<div id="project_heartrate_active"></div>
-						</div>
-
-							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-							<div>
-								<h3>Number of Steps by Hour of Day</h3>
-								<h4>This chart looks at the relationship between number of steps and the difference between resting and active heart rate over the hours of the day.
-								</h4>
-								<div id="project_heartrate"></div>
-							</div>
 
 						</div>
-					</div>
 						
 						<hr>
 
