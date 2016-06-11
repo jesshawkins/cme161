@@ -8,21 +8,26 @@ app = Flask(__name__, static_url_path='')
 def index():
     return app.make_response(open('app/index.html').read())
 
-@app.route("/boids")
-def boids():
-    return app.make_response(open('app/assets/html/boids_threejs.html').read())
+# @app.route("/boids")
+# def boids():
+#     return app.make_response(open('app/assets/html/boids_threejs.html').read())
 
-@app.route("/crime")
-def boids():
-    return app.make_response(open('app/assets/html/crime.html').read())
+# @app.route("/crime")
+# def boids():
+#     return app.make_response(open('app/assets/html/crime.html').read())
 
-@app.route("/baseball")
-def boids():
-    return app.make_response(open('app/assets/html/baseball.html').read())
+# @app.route("/baseball")
+# def boids():
+#     return app.make_response(open('app/assets/html/baseball.html').read())
 
-@app.route("/dessert")
-def boids():
-    return app.make_response(open('app/assets/html/dessert.html').read())
+# @app.route("/dessert")
+# def boids():
+#     return app.make_response(open('app/assets/html/dessert.html').read())
+
+# @app.route("/iris")
+# def boids():
+#     return app.make_response(open('app/assets/html/iris.html').read())
+    
     
 # send assets (ex. assets/js/random_triangle_meshes/random_triangle_meshes.js)
 # blocks other requests, so your directories won't get listed (ex. assets/js will return "not found")
