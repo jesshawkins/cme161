@@ -36,9 +36,7 @@ def get_trellis_limit(n_entries):
 def get_health():
 	# This method should return the entire data
 	with open('app/assets/data/health.json') as data_file:
-		response = json.dumps(json.load(data_file))
-		response.headers['Access-Control-Allow-Origin'] = '*'
-		return response
+		return json.dumps(json.load(data_file))
 
 @app.route('/health/limit/<int:n_entries>', methods=['GET'])
 def get_health_limit(n_entries):
