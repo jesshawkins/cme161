@@ -93,9 +93,6 @@ d3.json("http://tranquil-peak-82564.herokuapp.com/api/v1.0/data/iris/", function
   
   /* implement unique species name extraction */
   window.species_names = _.chain(remote_json).pluck("species").uniq().value();
-
-  group_sw.top(Infinity)
-    .forEach(function(d,i){ console.log(JSON.stringify(d)); });
   
   var petal_length_bubble = dc
     .bubbleChart("#dcjs_flower_bubble_chart","bar")
