@@ -11,7 +11,11 @@ def index():
 @app.route("/boids")
 def boids():
     return app.make_response(open('app/assets/html/boids_threejs.html').read())
-    
+
+@app.route("/health-data")
+def boids():
+    return app.make_response(open('app/assets/html/health.html').read())
+
 # send assets (ex. assets/js/random_triangle_meshes/random_triangle_meshes.js)
 # blocks other requests, so your directories won't get listed (ex. assets/js will return "not found")
 @app.route('/assets/<path:path>')
