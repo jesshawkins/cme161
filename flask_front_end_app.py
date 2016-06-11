@@ -11,21 +11,7 @@ def index():
 @app.route("/boids")
 def boids():
     return app.make_response(open('app/assets/html/boids_threejs.html').read())
-
-@app.route("/health-data")
-def boids():
-	with app.open_resource('app/assets/js/health.js') as data_file:
-    contents = data_file.read()
-    return app.make_response(open('app/assets/html/health.html').read())
-
-@app.route('/iris/data', methods=['GET'])
-def get_iris_data():
-	# This method should return the entire data
-	with open('app/assets/data/iris.json') as data_file:
-	response = json.dumps(json.load(data_file))
-	response.headers(['Access-Control-Allow-Origin'] = '*')
-    return response
-
+    
 # send assets (ex. assets/js/random_triangle_meshes/random_triangle_meshes.js)
 # blocks other requests, so your directories won't get listed (ex. assets/js will return "not found")
 @app.route('/assets/<path:path>')
@@ -81,8 +67,6 @@ def make_data_graph(data_list_in):
 	nodes = [{"name":n} for n in names.keys()]
 	return { "nodes": nodes, "edges": edges }
 
-def make_health_graph(data_list_in):
-	
 
 @app.route('/graph', methods=['GET'])
 def get_graph():
