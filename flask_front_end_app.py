@@ -8,9 +8,9 @@ app = Flask(__name__, static_url_path='')
 def index():
     return app.make_response(open('app/index.html').read())
 
-# @app.route("/boids")
-# def boids():
-#     return app.make_response(open('app/assets/html/boids_threejs.html').read())
+@app.route("/boids")
+def boids():
+    return app.make_response(open('app/assets/html/boids_threejs.html').read())
 
 # @app.route("/crime")
 # def boids():
