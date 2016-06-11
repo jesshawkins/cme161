@@ -36,54 +36,187 @@
 					<!-- begin header -->
 					<div class=".col-xs-12 .col-md-8">
 						<h1>Visualization Portfolio of Jess Hawkins & Michelle Han</h1>
-						<h4><a href='http://web.stanford.edu/~dderiso/cme151/' target='_blank'>CME 161: Data Visualization</a> <small>Spring 2016</small></h4>
+						<h4><u>Project Summary</u></h4>
+						<p>The purpose of this project was to examine our personal trends in physical activity over a two-and-a-half month period. The data set we collected contains information for both Michelle and Jess on the following metrics: heart rate, resting heart rate, steps, active calories, and distance (km). Each row of the data set represents one hour of the day. We have data from 4/19/2016 through 6/11/2016. The library can be found here:
+						<a href="http://gentle-coast-47677.herokuapp.com/health/data" target="_blank">
+							here</a>
+						</p><br>
+						<h4>Key Assumptions</h4>
+						<p>it is important to remember when viewing this data that it relies heavily on the assumption that Michelle’s apple watch and Jess’s Basis Peak collect data with approximately the same accuracy and consistency. In fact, after comparing these devices over the past few months, we suspect that they are not all that reliable. Therefore, the following analysis should be considered with that potential source of error in mind.</p>
+						<h4>Background</h4>
+						<p>As a group, we recently began a popular exercise regimen called T25, consisting of 25-minute high-intensity workout videos 5 days of the week. Proud of ourselves and our newfound healthy lifestyles, we’re interested to see if our fitness levels have “objectively” changed since beginning the program. Fortunately, we both wear fitness trackers (Michelle wears an apple watch and Jess wears a Basis Peak), and so we have daily activity and heat rate statistics captured.</p>
 						<hr>
 					</div>
 					<!-- end header -->
 
-					<!-- begin viz 1 -->
+		
+					<!-- begin project -->
 					<div class=".col-xs-12 .col-md-8">
-						<h3>
-							An Analysis of Crime in San Francisco
-						</h3>
+						<h2><b>
+							Final Project
+						</b></h2>
 
 						<p>
-							This visualization is our analysis of crime in various SF neighborhoods. The library used can be found at <a href="https://data.sfgov.org/Public-Safety/Map-Crime-Incidents-from-1-Jan-2003/gxxq-x39z" target="_blank">SF open data </a> as well as at <a href="https://www.kaggle.com/c/sf-crime" target="_blank">this Kaggle competition </a>
+							This visualization explores health app data. The library used is
+							<a href="http://gentle-coast-47677.herokuapp.com/health.json" target="_blank">
+								here</a>
 						</p>
-						<div class="container-fluid" style="margin-top:10px;">
-						  <div class="row">
-						    <div class="col-md-8">
-						      <div id="crime_slides"></div>
-						    </div>
-						    <div class="col-md-4 well pull-right">
-						      <h2>Crime in San Francisco</h2>
-						      <hr>
-						      <p id="message"></p>
-						      <button id="start_btn" class="btn btn-primary pull-right">Start</button>
-						    </div>
-						  </div>
-					</div>
-						
-						<hr>
 
-					</div>
-					<!-- end viz 1 -->
 
-					<!-- begin viz 2 -->
+						<div>
+							<!-- Part I -->
+							<div>
+							<h3>Control Center</h3>
+							<h4>Use the pie chart of number of steps to filter the subject. Use the slider to change the dependent variable. </h4>
+							<div>
+								<div id="project_steps_name" style="float:middle;"/></div>
+								<br><br><br><br><input id="switchYAxis"/><br><br><br><br>
+							</div>
+							<div id="project_resetButton" style="float:right;"></div>
+							<br><hr>
+
+							<div>
+								<h3>Hourly Statistics</h3>
+								<h4>You can also filter the data by hour of day.</h4>
+								<div id="project_hourly_chart" style="float:middle;"></div>
+							</div>
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+							<div>
+								<h3>Daily Statistics</h3>
+								<h4>You can also filter the data by day.</h4>
+								<div id="project_daily_chart" style="float:middle;"></div>
+							</div>
+
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+							<div>
+								<h3>Weekly Statistics</h3>
+								<h4>You can also filter the data by day of week.</h4>
+								<div id="project_weekly_chart" style="float:middle;"></div>
+							</div>
+
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+						</div>
+						<!-- Part II -->
+
+						<div>
+							<h3>Composite Graphic</h3>
+							<h4>This is a composite graphic that captures several variables. You can drag and zoom in the chart to explore.
+							</h4>
+							<p>X Axis = Number of steps
+							<br>Y Axis = Number of active calories
+							<br>Radius = Distance walked (km)
+							<br>Color = Average heart rate</p>
+							<div id="project_heartrate_active"></div>
+						</div>
+
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+							<div>
+								<h3>Bonus Graphic</h3>
+								<h4>This chart looks at the relationship between number of steps and the difference between resting and active heart rate over the hours of the day.
+								</h4>
+								<div id="project_heartrate"></div>
+								<hr>
+								<h3>Final Project: Report</h3>
+								<h4>Data Source</h4>
+								<p>The data was initially collected through an Apple Watch and a Basis Peak, and then was exported to csv using the iphone app QS Access. After being formatted in excel and converted to json using an online conversion software (link below), the data was ready for use in our analysis. The data can be viewed in json format at the following link: https://warm-cliffs-73390.herokuapp.com/health</p>
+								<h4>Findings</h4>
+								<p><u>Heart Rate:</u> although our resting heart rate doesn’t appear to decrease over time, it is interesting to note that there is a steep decrease average heart rate around the time of June 1. This coincides almost exactly with the beginning of our finals period, and our lack of exercise is all too apparent.</p>
+								<p><u>Steps:</u> Michelle and Jess keep up a fairly routing workout schedule during the week, and we thought we were doing OK on weekends – but it turns out we were wrong! In fact, Sunday is our most inactive day across the board. In fact, we only average about 200 active calories on Sundays! That’s pretty sad.</p>
+								<p><u>Calories Burned:</u> perhaps not surprisingly, there is a strong-looking correlation between the amount of steps that we took and the amount of additional calories (coded here as active calories) that we burned that day. In the chart labeled “Active Calories by Steps Taken” this relationship can be clearly seen. Additionally, the color of the bubbles here represents our heart rate, and the radius of the bubble is correlated to the total distance walked (a similar measure to the steps). Something interesting to note about this chart is that elevated average heart rate does not seem to correlate to increased levels of activity. We propose that this could be due to a few reasons: on days when we exercise more, we may rest more afterwards, leaving the average score is unchanged; (2) we occasionally get very excited or nervous when seated (med school finals will do that do you); or (3) the consistency of the heart rate data collected from Basis or Apple is questionable.</p>
+								<p><u>Sources:</u> We were extremely thankful to take advantage of some of the wonderful tutors in dcjs and javascript found on the internet, as well as other general coding resources. Among these are (specific aspects of the code that we developed from these resources are noted where applicable):</p>
+								<p>1.     http://www.csvjson.com/csv2json - allowed us to convert our data csv to a json file</p>
+								<p>2.     http://quantifiedself.com/access-app/app - great app that converts iphone data to csv</p>
+								<p>3.     http://colorbrewer2.org/ - picking color palettes</p>
+								<p>4.     http://www.d3noob.org/2013/08/add-row-chart-in-dcjs.html - learning how to create row charts</p>
+								<p>5.     https://github.com/d3/d3/wiki/Quantitative-Scales - learning about scales in d3</p>
+								<p>6.     http://www.w3schools.com/js/ - general javascript tutorial</p>
+								<p>7.     http://stackoverflow.com/questions/21239789/crossfilter-reduce-find-number-of-uniques - finding unique values</p>
+								<p>8.     https://dc-js.github.io/dc.js/docs/stock.html - a really thorough tutorial on dcjs that helped us create the beautiful bubble chart</p>
+								<h4>Future Directions</h4>
+								<p>There are a number of aspects of this project where we see room for improvement and continued development. These are listed below, in order of importance to us:</p>
+      					<p>1. Serving the data from the back end. This is a place where we had major struggles in the development of this project. After about 3 hours and about 300 tries, and no success, we finally made the painful decision to hard code the data into the file. We know this is far from ideal, and we are lucky in this instance that our data set it small enough to not significantly slow down our code. However, if we are ever going to expand our dataset, we know that this is the area where we will focus first.</p>
+       					<p>2. Filtering. We’re working on figuring out how to convert all of the json values within the “date” key to a date object, so that we can filter chronologically.</p>
+								<p>3. Use better data collection hardware: although wrist heart rate monitors are convenient, they are not reliable or consistent in their readings. Therefore, in order to truly improve on this project, we need to collect higher-integrity data.</p>
+								<p>4. Get more people’s data, and over a longer period of time.</p>
+								<p>5. Integrate GPS tracking for our distance and steps. This way, we could integrate a choropleth map into our visualization!</p>
+							</div>
+
+
+						</div>
+					<!-- end project -->
+				
+
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+					<!-- begin viz 4 -->
 					<div class=".col-xs-12 .col-md-8">
-						<h3>
-							Baked Goods Price Hierarchy
-						</h3>
+						<h2><b>
+							Exploring Flower Species: Sepal and Petal Length and Widths
+						</b></h2>
 
 						<p>
-							This visualization is a tree of various desserts and their prices.
+							This visualization shows and allows exploration of
+							various sepal and petal lengths of different species of flowers.
+							The library used is
+							<a href="http://tranquil-peak-82564.herokuapp.com/api/v1.0/data/iris/" target="_blank">
+								here </a>.
 						</p>
-							<div id="hierarchy"></div>
-						
-						<hr>
+
+						<div id="dcjs_flower_container">
+							<h4>Bubble Chart and Reset Button</h4>
+							<div id="dcjs_flower_resetButton"></div>
+							<div id="dcjs_flower_switchBubble"></div>
+
+							<h4>Pie/Chart Switches</h4>
+							<div id="dcjs_flower_switchChart"></div>
+							<div id="dcjs_flower_switchSpecies"></div>
+							<div id="dcjs_flower_switchSepalLength"></div>
+							<div id="dcjs_flower_switchSepalWidth"></div>
+							<div id="dcjs_flower_switchPetalLength"></div>
+							<div id="dcjs_flower_switchPetalWidth"></div>
+
+							<hr>
+
+							<div style="float:left;">
+							  <h3>Distribution of Length and Width</h3>
+							  <div id="dcjs_flower_bubble_chart"></div>
+							</div>
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+							<div style="float:left;">
+							  <h3>Species</h3>
+							  <div id="dcjs_flower_species_chart"></div>
+							</div>
+							<div style="float:left;">
+							  <h3>Sepal Length</h3>
+							  <div id="dcjs_flower_sepal_length_chart"></div>
+							</div>
+							<div style="float:left;">
+							  <h3>Sepal Width</h3>
+							  <div id="dcjs_flower_sepal_width_chart"></div>
+							</div>
+							<div style="float:left;">
+							  <h3>Petal Length</h3>
+							  <div id="dcjs_flower_petal_length_chart"></div>
+							</div>
+							<div style="float:left;">
+							  <h3>Petal Width</h3>
+							  <div id="dcjs_flower_petal_width_chart"></div>
+							</div>
+
+						</div>
+
+						<!-- <hr> -->
 
 					</div>
-					<!-- end viz 2 -->
+					<!-- end viz 4 -->
+
+					<hr>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<hr>
+
 
 					<!-- begin viz 3 -->
 					<div class=".col-xs-12 .col-md-8">
@@ -123,122 +256,61 @@
 
 							<hr>	
 						</div>
-						
-						<hr>
-
 					</div>
 					<!-- end viz 3 -->
-				
 
-					<!-- begin viz 4 -->
+					<hr>
+
+
+					<!-- begin viz 2 -->
 					<div class=".col-xs-12 .col-md-8">
+						<h2><b>
+							Heirarchical Bakery Pricing
+						</b></h2>
+
+						<p>
+							This visualization shows and allows exploration of
+							data about prices of various baked goods
+						</p>
+
+							<div id="hierarchy"></div>
+						</div>
+
+					<!-- end viz 2 -->
+
+					<hr>
+
+
+
+					<!-- begin viz 1 -->
+								<div class=".col-xs-12 .col-md-8">
 						<h3>
-							Iris Dataset Visualization
+							An Analysis of Crime in San Francisco
 						</h3>
 
 						<p>
-							This visualization shows flower features. The library used can be found <a href="http://tranquil-peak-82564.herokuapp.com/api/v1.0/data/iris/" target="_blank">here</a>. The DCJS tutorial for making the beautiful bubble chart can be found <a href="https://dc-js.github.io/dc.js/docs/stock.html" target="_blank">here</a>.
+							This visualization is our analysis of crime in various SF neighborhoods. The library used can be found at <a href="https://data.sfgov.org/Public-Safety/Map-Crime-Incidents-from-1-Jan-2003/gxxq-x39z" target="_blank">SF open data </a> as well as at <a href="https://www.kaggle.com/c/sf-crime" target="_blank">this Kaggle competition </a>
 						</p>
+						<div class="container-fluid" style="margin-top:10px;">
+						  <div class="row">
+						    <div class="col-md-8">
+						      <div id="crime_slides"></div>
+						    </div>
+						    <div class="col-md-4 well pull-right">
+						      <h2>Crime in San Francisco</h2>
+						      <hr>
+						      <p id="message"></p>
+						      <button id="start_btn" class="btn btn-primary pull-right">Start</button>
+						    </div>
+						  </div>
+					</div>
 
-						<hr>
-						<div id="flower_container"> 
-								<p>Bubble Chart and Reset Button</p>
-
-								<div style="float:right;">
-								 	<div id="dcjs_flower_resetButton"></div>
-								</div>
-								
-								<div id="dcjs_flower_switchBubble"></div>
-								
-								<p>Pie/Chart Switches</p>
-								
-								<div id="dcjs_flower_switchChart"></div>
-								<div id="dcjs_flower_switchSpecies"></div>
-								<div id="dcjs_flower_switchSepalLength"></div>
-								<div id="dcjs_flower_switchSepalWidth"></div>
-								<div id="dcjs_flower_switchPetalLength"></div>
-								<div id="dcjs_flower_switchPetalWidth"></div>
-
-								<hr>
-								<div style="float:left;">
-								  <h3>Distribution of Petal Length and Width</h3>
-								  <div id="dcjs_flower_bubble_chart"></div>
-								  <hr>
-								</div>
-								<div style="float:left;">
-								  <h3>Species</h3>
-								  <div id="dcjs_flower_species_chart"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Sepal Length</h3>
-								  <div id="dcjs_flower_sepal_length_chart"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Sepal Width</h3>
-								  <div id="dcjs_flower_sepal_width_chart"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Petal Length</h3>
-								  <div id="dcjs_flower_petal_length_chart"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Petal Width</h3>
-								  <div id="dcjs_flower_petal_width_chart"></div>
-								</div>
 						</div>
 						
 						<hr>
 
 					</div>
-					<!-- end viz 4 -->
-
-<!-- begin viz 5 -->
-					<div class=".col-xs-12 .col-md-8">
-						<h3>
-							Practice Final
-						</h3>
-
-						<p>
-							Practice final stuff here
-						</p>
-
-						<hr>
-						<div id="health_container"> 
-								<div style="float:left;">
-								  <h3>Steps By Day</h3>
-								  <div id="daily_steps"></div>
-								  <hr>
-								</div>
-								<div style="float:left;">
-								  <h3>Distance by Day - Kilometers</h3>
-								  <div id="daily_dist"></div>
-								  <hr>
-								</div>
-								<div style="float:left;">
-								  <h3>Heart Rate By Day</h3>
-								  <div id="daily_hr"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Active Calories By Weekday</h3>
-								  <div id="weekly_activecal"></div>
-								  <div id="weekly_steps"></div>
-								  <div id="weekly_avg_hr"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Active Steps By Weekday</h3>
-								  <div id="weekly_steps"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Active Heart Rate By Weekday</h3>
-								  <div id="weekly_avg_hr"></div>
-								</div>
-								<div style="float:left;">
-								  <h3>Active Calories By Steps Taken</h3>
-								  <div id="hr_activecal"></div>
-								</div>
-
-
-						</div>
+					<!-- end viz 1 -->
 						
 						<hr>
 

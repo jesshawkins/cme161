@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+		<meta charset="utf-8">
+		<title>CME 161 Data Visualization</title>
+
+		<!-- site dependencies -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/style.css" rel="stylesheet">
+
+		<!-- crime dependencies -->
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" type="text/css">
+
+		<!-- baseball dependencies -->
+		<link href="http://seiyria.com/bootstrap-slider/css/bootstrap-slider.css" rel="stylesheet" type="text/css">
+		<link href="../css/dcjs_baseball.css" rel="stylesheet">
+
+		<!-- flower dependencies -->
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/dc/1.7.5/dc.css" rel="stylesheet" type="text/css">
+		<link href="../css/dcjs_flower.css" rel="stylesheet">
+</head>
+<body>
+	<!-- begin wrap -->		
+	<div id="wrap">
+	  
+	  <!-- begin container -->
+		<div class="container">
+
+			<!-- begin content -->
+			<div id="content">
+
+				<!-- begin row -->
+				<div class="row">
+
+					<!-- begin header -->
+					<div class=".col-xs-12 .col-md-8">
+						<h1>Visualization Portfolio of Jess Hawkins & Michelle Han</h1>
+						<h4><a href='http://web.stanford.edu/~dderiso/cme151/' target='_blank'>CME 161: Data Visualization</a> <small>Spring 2016</small></h4>
+						<hr>
+					</div>
+					<!-- end header -->
+
+		
+					<!-- begin project -->
+					<div class=".col-xs-12 .col-md-8">
+						<h2><b>
+							Final Project
+						</b></h2>
+
+						<p>
+							This visualization explores health app data. The library used is
+							<a href="http://gentle-coast-47677.herokuapp.com/health.json" target="_blank">
+								here</a>
+						</p>
+
+
+						<div>
+							<!-- Part I -->
+							<div>
+							<h3>Control Center</h3>
+							<h4>Use the pie chart of number of steps to filter the subject. Use the slider to change the dependent variable. </h4>
+							<div>
+								<div id="project_steps_name" style="float:middle;"/></div>
+								<br><br><br><br><input id="switchYAxis"/><br><br><br><br>
+							</div>
+							<div id="project_resetButton" style="float:right;"></div>
+							<br><hr>
+
+							<div>
+								<h3>Hourly Statistics</h3>
+								<h4>You can also filter the data by hour of day.</h4>
+								<div id="project_hourly_chart" style="float:middle;"></div>
+							</div>
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+							<div>
+								<h3>Daily Statistics</h3>
+								<h4>You can also filter the data by day.</h4>
+								<div id="project_daily_chart" style="float:middle;"></div>
+							</div>
+
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+							<div>
+								<h3>Weekly Statistics</h3>
+								<h4>You can also filter the data by day of week.</h4>
+								<div id="project_weekly_chart" style="float:middle;"></div>
+							</div>
+
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+						</div>
+						<!-- Part II -->
+
+						<div>
+							<h3>Composite Graphic</h3>
+							<h4>This is a composite graphic that captures several variables. You can drag and zoom in the chart to explore.
+							</h4>
+							<p>X Axis = Number of steps
+							<br>Y Axis = Number of active calories
+							<br>Radius = Distance walked (km)
+							<br>Color = Average heart rate</p>
+							<div id="project_heartrate_active"></div>
+						</div>
+
+							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+							<div>
+								<h3>Bonus Graphic</h3>
+								<h4>This chart looks at the relationship between number of steps and the difference between resting and active heart rate over the hours of the day.
+								</h4>
+								<div id="project_heartrate"></div>
+							</div>
+
+						</div>
+					<!-- end project -->
+									</div>
+					<!-- end viz 5 -->
+
+				</div>
+				<!-- end row -->
+
+			</div> 
+			<!-- end content -->
+
+		</div>
+		<!-- end container -->
+
+	</div>
+	<!-- end wrap -->	
+
+	<!-- begin footer -->
+	<div id="footer">
+	  <div class="container">
+			<p class="text-muted credit"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="assets/images/cc_80x15.png" /></a> <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">This Portfolio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://web.stanford.edu/~dderiso/cme151/" property="cc:attributionName" rel="cc:attributionURL">Your Name</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/dderiso/stanford_data_viz_course" rel="dct:source">https://github.com/dderiso/stanford_data_viz_course</a>.</p>
+	  </div>
+	</div>
+	<!-- end footer -->
+
+
+	<!-- crime dependencies -->
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js'></script>
+
+	<!-- baseball dependencies -->
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js'></script>
+	<script src='http://seiyria.com/bootstrap-slider/dependencies/js/jquery.min.js'></script>
+	<script src='http://seiyria.com/bootstrap-slider/js/bootstrap-slider.js'></script>
+	<script src='http://seiyria.com/bootstrap-slider/dependencies/js/jquery.min.js'></script>
+
+	<!-- flower dependencies -->
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.7/crossfilter.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/dc/1.7.1/dc.js'></script>
+
+	<!-- js scripts -->
+	<script src='../js/crime.js'></script>
+	<script src='../js/dessert.js'></script>
+	<script src='../js/baseball.js'></script>
+	<script src='../js/dcjs_flower.js'></script>
+	<script src='../js/health.js'></script>
+
+
+</body>
+</html>
